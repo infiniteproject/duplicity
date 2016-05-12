@@ -1,13 +1,15 @@
 # duplicity
 Duplicity for Docker
 
-Dropbox & OAuth2 is supported; create app at dropbox.com/developers, generate auth token, create folder "backups" inside the "app folder" and run image as:
+This is a very basic Docker image with Duplicity and Dropbox & OAuth2 support.
+You can simply create your app at dropbox.com/developers, generate auth token, create folder "backups" inside the "app folder" and run image:
 ```
-docker run --rm -h duplicity -v /stuff/to/backup:/source -v duplicity:/root -e DPBX_ACCESS_TOKEN="" -e PASSPHRASE="" duplicity full /source dpbx:///backups
+docker run --rm -h duplicity -v /stuff/to/backup:/mount/in/container -v duplicity:/root -e DPBX_ACCESS_TOKEN="" -e PASSPHRASE="" duplicity <command>
 ```
-Metadata is stored in "duplicity" Docker volume and backup sent to "backups" Dropbox folder. Do not forget to set "-h duplicity" parameter, otherwise pass --allow-source-mismatch argument on the next run. Can be run via cron (on the host!) 
-
-/etc/cron.d/duplicity:
+<command> example:
 ```
-0 0 * * * root /usr/local/sbin/backup.sh >/dev/null 2>&1
+full /mount/in/container dpbx:///backups
 ```
+This container is just a wrapper for duplicity so any duplicity command is supported.
+With the example <command> metadata is stored in "duplicity" Docker volume and backup sent to "backups" Dropbox folder.
+Do not forget to set "-h duplicity" parameter, otherwise pass --allow-source-mismatch argument on the next run.
