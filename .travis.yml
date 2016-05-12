@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t infiniteproject/duplicity .
+  - docker run --name duplicity -d infiniteproject/duplicity
+script:
+  - docker ps -a
