@@ -8,7 +8,7 @@ docker run --rm -h duplicity -v /stuff/to/backup:/mount/in/container -v duplicit
 ```
 <command> example:
 ```
-full /mount/in/container dpbx:///backups
+full /mount/point/in/container dpbx:///backups
 ```
 This container is just a wrapper for duplicity so any duplicity command is supported.
 With the example <command> metadata is stored in "duplicity" Docker volume and backup sent to "backups" Dropbox folder.
