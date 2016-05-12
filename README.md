@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/infiniteproject/duplicity.svg?branch=master)](https://travis-ci.org/infiniteproject/duplicity)
 # duplicity
 Duplicity for Docker
 
