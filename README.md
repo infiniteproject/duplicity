@@ -6,7 +6,7 @@ You can simply create your app at dropbox.com/developers, generate auth token, c
 ```
 docker run --rm -h duplicity -v /stuff/to/backup:/mount/in/container -v duplicity:/root -e DPBX_ACCESS_TOKEN="" -e PASSPHRASE="" duplicity <command>
 ```
-<command> example:
+command example:
 ```
 full /mount/point/in/container dpbx:///backups
 ```
