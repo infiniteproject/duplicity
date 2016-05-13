@@ -10,6 +10,7 @@ RUN apt-get update && apt-get -y install \
 
 RUN apt-get update && apt-get -y install \
 	duplicity \
+        ncftp \
 	python-pip && \
 	pip install dropbox
 	
