@@ -12,5 +12,5 @@ docker run --rm -h duply -v /files:/source -v duply:/root \
 ```
 
 This container is just a wrapper for duplicity so any duplicity command is supported.
-With the example command metadata is stored in "duply" Docker volume (and then reused) and backup sent to "backups" Dropbox folder.
+With the example command metadata is stored in "duply" Docker volume (and then reused unless run with --rm) and backup sent to "backups" Dropbox folder.
 Do not forget to set "-h duply" parameter, otherwise pass --allow-source-mismatch argument on the next run.
