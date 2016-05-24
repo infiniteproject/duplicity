@@ -3,7 +3,7 @@
 Duplicity for Docker
 
 This is a very basic Docker image with Duplicity and Dropbox & OAuth2 support (from Ubuntu PPA).
-You can simply create your app at dropbox.com/developers, generate auth token, create folder "backups" inside the "app folder" and run image mountinf /files/to/backup:
+You can simply create your app at dropbox.com/developers, generate auth token, create folder "backups" inside the "app folder" and run the image bind-mounting /files/to/backup:
 ```
 docker run --rm -h duply -v /files/to/backup:/source -v duply:/root \
   -e DPBX_ACCESS_TOKEN="" \
