@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t infiniteproject/duplicity .
-  - docker run --name duplicity -d infiniteproject/duplicity
+  - docker build -t duplicity .
+  - docker run --name duplicity -d duplicity
 script:
   - docker ps -a
