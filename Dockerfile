@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-
 MAINTAINER Ruggero <infiniteproject@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -21,7 +20,5 @@ RUN apt-get clean && \
 	
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-VOLUME ["/root"]
 
 ENTRYPOINT ["/entrypoint.sh"]
