@@ -4,7 +4,7 @@ MAINTAINER Ruggero <infiniteproject@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get -y install \
-       software-properties-common && \
+        software-properties-common && \
     add-apt-repository ppa:duplicity-team/ppa
 
 RUN apt-get update && apt-get -y install \
